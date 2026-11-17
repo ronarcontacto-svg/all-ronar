@@ -1,0 +1,14 @@
+{
+  "name": "Senda Cuántica",
+  "short_name": "Senda",
+  "description": "Práctica diaria de autoobservación.",
+  "start_url": "/hoy",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#030306",
+  "theme_color": "#030306",
+  "lang": "es",
+  "icons": [
+    { "src": "/icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
