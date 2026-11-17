@@ -104,7 +104,7 @@ export function Cuaderno() {
     <div className="pantalla">
       <header className="cabecera">
         <h1 className="titulo">Cuaderno Dual</h1>
-        <p className="tenue">Paso {paso + 1} de {PASOS.length}</p>
+        <p className="tenue">Paso {Number.parseInt(actual.titulo, 10)} de 8</p>
       </header>
 
       <div className="progreso" aria-hidden="true">
