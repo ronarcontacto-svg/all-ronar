@@ -118,6 +118,8 @@ export function Sintonia() {
 
       {error && <p className="error" role="alert">{error}</p>}
 
+      {fase === 'entrada' && <Circulo activo={false} />}
+
       {fase === 'entrada' && (
         <Lectura
           titulo="Lectura de entrada"
