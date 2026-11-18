@@ -155,8 +155,8 @@ export async function exportarDatos(uid: string) {
  * No borra consentimientos: la tabla no tiene policy de DELETE, y se conservan
  * como prueba de la aceptación. Tampoco borra la cuenta de autenticación.
  */
-export async function borrarMisRegistros(uid: string): Promise<void> {
-  ok(await supabase.from('observaciones').delete().eq('usuario_id', uid).select('id'));
-  ok(await supabase.from('sintonias').delete().eq('usuario_id', uid).select('id'));
-  ok(await supabase.from('intenciones_diarias').delete().eq('usuario_id', uid).select('id'));
+export async function borrarMisRegistros(): Promise<void> {
+  // Función SQL (migración 0004): borra en una sola transacción, o no borra nada.
+  const { error } = await supabase.rpc('borrar_mis_registros');
+  if (error) throw new Error(error.message);
 }

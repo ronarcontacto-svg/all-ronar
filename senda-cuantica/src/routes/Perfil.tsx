@@ -42,7 +42,7 @@ export function Perfil() {
     setError(null);
     setOcupado(true);
     try {
-      await borrarMisRegistros(uid);
+      await borrarMisRegistros();
       setConfirmacion('');
       setMensaje(
         'Tus intenciones, observaciones y sintonías se han borrado. Los consentimientos se conservan como prueba de aceptación.',

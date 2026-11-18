@@ -24,10 +24,14 @@ export function Condiciones() {
     setError(null);
     setGuardando(true);
     const uid = sesion.user.id;
-    const { error: err } = await supabase.from('consentimientos').insert([
-      { usuario_id: uid, tipo: 'condiciones', version: VERSION_CONSENTIMIENTO },
-      { usuario_id: uid, tipo: 'datos', version: VERSION_CONSENTIMIENTO },
-    ]);
+    // upsert + ignoreDuplicates: si ya existe (doble clic, reintento), no se duplica (migración 0003).
+    const { error: err } = await supabase.from('consentimientos').upsert(
+      [
+        { usuario_id: uid, tipo: 'condiciones', version: VERSION_CONSENTIMIENTO },
+        { usuario_id: uid, tipo: 'datos', version: VERSION_CONSENTIMIENTO },
+      ],
+      { onConflict: 'usuario_id,tipo,version', ignoreDuplicates: true },
+    );
     setGuardando(false);
     if (err) {
       setError('No se pudo registrar el consentimiento. Inténtalo de nuevo.');
