@@ -332,6 +332,14 @@ a.marca-icono { text-decoration: none; color: inherit; display: grid; place-item
 .hoja .cifra-de { color: #6b5f4b; }
 /* Más específico que .tarjeta.hero para que el margen de la espiral se respete */
 .tarjeta.hoja, .tarjeta.hero.hoja { padding: 30px 24px 28px 74px; }
+@media (max-width: 480px) {
+  .tarjeta.hoja, .tarjeta.hero.hoja { padding: 24px 16px 22px 50px; }
+  .hoja::before {
+    left: 10px; width: 10px;
+    background: radial-gradient(circle, #030306 2.6px, #b8b2a2 3.4px, transparent 4.2px) 0 0 / 10px 30px repeat-y;
+  }
+  .hoja .campo.area { font-size: 1.1rem; }
+}
 .zona-peligro .eyebrow { color: #F87171; }
 
 /* Herramientas */
