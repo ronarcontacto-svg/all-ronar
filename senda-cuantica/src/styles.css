@@ -299,9 +299,7 @@ a.marca-icono { text-decoration: none; color: inherit; display: grid; place-item
 /* Papel cálido con tinta oscura: solo en las pantallas donde se escribe */
 .hoja {
   background-color: #f4ecd9;
-  background-image:
-    linear-gradient(90deg, transparent 52px, #e0786f 52px, #e0786f 53px, transparent 53px),
-    repeating-linear-gradient(to bottom, transparent 0, transparent 31px, #cdbf9b 31px, #cdbf9b 32px);
+  background-image: repeating-linear-gradient(to bottom, transparent 0, transparent 31px, #cdbf9b 31px, #cdbf9b 32px);
   background-attachment: local;
   color: #2b2620;
   border: 1px solid #d9ccae;
