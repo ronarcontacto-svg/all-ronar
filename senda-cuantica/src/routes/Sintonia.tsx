@@ -34,23 +34,34 @@ export function Sintonia() {
   const [restante, setRestante] = useState(60);
   const [completada, setCompletada] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  // Hora de inicio real: el navegador frena los timers en segundo plano, así que el tiempo se mide con Date.now().
+  const [inicio, setInicio] = useState(0);
+  const [duracionReal, setDuracionReal] = useState(0);
 
-  // Cuenta atrás de 1 s durante la sesión.
+  // Cuenta atrás de 1 s durante la sesión, calculada desde la hora de inicio.
   useEffect(() => {
     if (fase !== 'sesion') return;
-    const id = window.setInterval(() => setRestante((r) => r - 1), 1000);
+    const total = minutos * 60;
+    const tick = () => {
+      const transcurrido = Math.floor((Date.now() - inicio) / 1000);
+      setRestante(Math.max(0, total - transcurrido));
+    };
+    tick();
+    const id = window.setInterval(tick, 1000);
     return () => window.clearInterval(id);
-  }, [fase]);
+  }, [fase, inicio, minutos]);
 
   // Al llegar a cero, la sesión se da por completada.
   useEffect(() => {
     if (fase === 'sesion' && restante <= 0) {
       setCompletada(true);
+      setDuracionReal(minutos * 60);
       setFase('salida');
     }
-  }, [fase, restante]);
+  }, [fase, restante, minutos]);
 
   function iniciar() {
+    setInicio(Date.now());
     setRestante(minutos * 60);
     setCompletada(false);
     setFase('sesion');
@@ -58,6 +69,7 @@ export function Sintonia() {
 
   function salir() {
     // Botón Salir: termina antes de tiempo, no se marca como completada.
+    setDuracionReal(Math.min(minutos * 60, Math.floor((Date.now() - inicio) / 1000)));
     setCompletada(false);
     setFase('salida');
   }
@@ -67,7 +79,7 @@ export function Sintonia() {
     setError(null);
     try {
       await guardarSintonia(uid, {
-        duracion_seg: minutos * 60,
+        duracion_seg: duracionReal,
         lectura_entrada: lecturaEntrada,
         lectura_salida: lecturaSalida,
         completada,

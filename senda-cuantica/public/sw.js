@@ -26,8 +26,11 @@ self.addEventListener('fetch', (event) => {
   event.respondWith(
     fetch(request)
       .then((res) => {
-        const copy = res.clone();
-        caches.open(CACHE).then((cache) => cache.put(request, copy));
+        // Solo cachear respuestas correctas: un 500 no debe quedar guardado para uso sin conexión.
+        if (res.ok) {
+          const copy = res.clone();
+          caches.open(CACHE).then((cache) => cache.put(request, copy));
+        }
         return res;
       })
       .catch(() => caches.match(request).then((hit) => hit || caches.match('/'))),
