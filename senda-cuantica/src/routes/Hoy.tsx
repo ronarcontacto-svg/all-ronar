@@ -80,10 +80,15 @@ export function Hoy() {
 
   return (
     <div className="pantalla">
-      <header className="cabecera">
-        <h1 className="titulo">Hoy</h1>
-        <p className="tenue">{fechaHoy}</p>
-      </header>
+      <section className="tarjeta hero">
+        <p className="eyebrow">Campo de práctica · {fechaHoy}</p>
+        <h1 className="titulo-grande">
+          Interrumpe, <span className="text-gradient-quantum">sintoniza</span>, sella.
+        </h1>
+        <p className="tenue">
+          Una práctica diaria de observación: elegir, observar y registrar lo que ocurre. Sin promesas; solo lo que registras.
+        </p>
+      </section>
 
       {error && <p className="error" role="alert">{error}</p>}
 

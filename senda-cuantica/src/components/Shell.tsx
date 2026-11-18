@@ -18,16 +18,25 @@ export function LayoutProtegido() {
 
   return (
     <div className="app">
+      <header className="cabecera-app">
+        <div className="marca">
+          <div>
+            <p className="eyebrow">Arquitectura de coherencia</p>
+            <p className="marca-nombre">Senda <span className="text-gradient-quantum">Cuántica</span></p>
+          </div>
+          <div className="marca-icono" aria-hidden="true">◎</div>
+        </div>
+        <nav className="tabs" aria-label="Principal">
+          <Link to="/hoy" className="tab">Hoy</Link>
+          <Link to="/intencion" className="tab">Intención</Link>
+          <Link to="/cuaderno" className="tab">Cuaderno</Link>
+          <Link to="/sintonia" className="tab">Sintonía 0,1 Hz</Link>
+          <Link to="/perfil" className="tab">Perfil</Link>
+        </nav>
+      </header>
       <main className="contenido">
         <Outlet />
       </main>
-      <nav className="navegacion" aria-label="Principal">
-        <Link to="/hoy" className="nav-item">Hoy</Link>
-        <Link to="/intencion" className="nav-item">Intención</Link>
-        <Link to="/cuaderno" className="nav-item">Cuaderno</Link>
-        <Link to="/sintonia" className="nav-item">Sintonía</Link>
-        <Link to="/perfil" className="nav-item">Perfil</Link>
-      </nav>
     </div>
   );
 }
