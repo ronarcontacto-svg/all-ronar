@@ -8,6 +8,8 @@ import { Intencion } from './routes/Intencion';
 import { Cuaderno } from './routes/Cuaderno';
 import { Sintonia } from './routes/Sintonia';
 import { Perfil } from './routes/Perfil';
+import { RuedaVida } from './routes/Rueda';
+import { Reencuadre } from './routes/Reencuadre';
 
 const raiz = createRootRoute({ component: () => <Outlet /> });
 
@@ -49,13 +51,27 @@ const rutaSintonia = createRoute({
   path: '/sintonia',
   component: Sintonia,
 });
+const rutaRueda = createRoute({ getParentRoute: () => zonaPrivada, path: '/rueda', component: RuedaVida });
+const rutaReencuadre = createRoute({
+  getParentRoute: () => zonaPrivada,
+  path: '/reencuadre',
+  component: Reencuadre,
+});
 const rutaPerfil = createRoute({ getParentRoute: () => zonaPrivada, path: '/perfil', component: Perfil });
 
 const arbol = raiz.addChildren([
   indice,
   rutaEntrar,
   rutaCondiciones,
-  zonaPrivada.addChildren([rutaHoy, rutaIntencion, rutaCuaderno, rutaSintonia, rutaPerfil]),
+  zonaPrivada.addChildren([
+    rutaHoy,
+    rutaIntencion,
+    rutaCuaderno,
+    rutaSintonia,
+    rutaRueda,
+    rutaReencuadre,
+    rutaPerfil,
+  ]),
 ]);
 
 export const router = createRouter({ routeTree: arbol });

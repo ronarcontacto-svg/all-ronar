@@ -258,6 +258,22 @@ p { margin: 0 0 12px; }
 .estado { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-alchemy); white-space: nowrap; }
 .estado.hecho { color: var(--cyan-quantum); }
 
+/* Rueda de la vida y reencuadre */
+.rueda-bloque { display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; }
+.rueda { width: min(86vw, 340px); height: auto; overflow: visible; }
+.rueda-anillo { fill: none; stroke: rgba(168, 85, 247, 0.22); stroke-width: 1; }
+.rueda-eje { stroke: rgba(56, 189, 248, 0.22); stroke-width: 1; }
+.rueda-forma {
+  fill: rgba(56, 189, 248, 0.14); stroke: var(--cyan-quantum); stroke-width: 1.5;
+  filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.35));
+}
+.rueda-punto { fill: var(--gold-alchemy); }
+.rueda-etiqueta { fill: var(--tenue); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; font-family: var(--fuente-cuerpo, inherit); }
+.rango { display: flex; flex-direction: column; gap: 6px; }
+.rango-cabecera { display: flex; justify-content: space-between; font-size: 0.9rem; }
+.cifra-pequena { font-family: var(--fuente-titulo); color: var(--gold-alchemy); }
+.rango input[type='range'] { width: 100%; accent-color: var(--violet-quantum, #8B5CF6); }
+
 /* Métricas en fila, como el prototipo */
 .metricas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
 .metrica { padding: 16px; border-radius: 18px; }
