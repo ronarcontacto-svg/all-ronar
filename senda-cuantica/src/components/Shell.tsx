@@ -30,7 +30,7 @@ export function LayoutProtegido() {
           <Link to="/hoy" className="tab">Hoy</Link>
           <Link to="/intencion" className="tab">Intención</Link>
           <Link to="/cuaderno" className="tab">Cuaderno</Link>
-          <Link to="/sintonia" className="tab">Sintonía 0,1 Hz</Link>
+          <Link to="/sintonia" className="tab">Sintonía</Link>
           <Link to="/perfil" className="tab">Perfil</Link>
         </nav>
       </header>
