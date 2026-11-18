@@ -24,16 +24,14 @@ export function LayoutProtegido() {
             <p className="eyebrow">Arquitectura de coherencia</p>
             <p className="marca-nombre">Senda <span className="text-gradient-quantum">Cuántica</span></p>
           </div>
-          <div className="marca-icono" aria-hidden="true">◎</div>
+          <Link to="/perfil" className="marca-icono" aria-label="Perfil y mis datos">◎</Link>
         </div>
         <nav className="tabs" aria-label="Principal">
           <Link to="/hoy" className="tab">Hoy</Link>
           <Link to="/intencion" className="tab">Intención</Link>
           <Link to="/cuaderno" className="tab">Cuaderno</Link>
           <Link to="/sintonia" className="tab">Sintonía</Link>
-          <Link to="/rueda" className="tab">Rueda</Link>
-          <Link to="/reencuadre" className="tab">Reencuadre</Link>
-          <Link to="/perfil" className="tab">Perfil</Link>
+          <Link to="/herramientas" className="tab">Herramientas</Link>
         </nav>
       </header>
       <main className="contenido">

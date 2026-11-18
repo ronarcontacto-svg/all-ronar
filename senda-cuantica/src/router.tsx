@@ -13,6 +13,7 @@ import { Reencuadre } from './routes/Reencuadre';
 import { Niveles } from './routes/Niveles';
 import { Metamodelo } from './routes/Metamodelo';
 import { Posiciones } from './routes/Posiciones';
+import { Herramientas } from './routes/Herramientas';
 
 const raiz = createRootRoute({ component: () => <Outlet /> });
 
@@ -71,6 +72,11 @@ const rutaPosiciones = createRoute({
   path: '/posiciones',
   component: Posiciones,
 });
+const rutaHerramientas = createRoute({
+  getParentRoute: () => zonaPrivada,
+  path: '/herramientas',
+  component: Herramientas,
+});
 const rutaPerfil = createRoute({ getParentRoute: () => zonaPrivada, path: '/perfil', component: Perfil });
 
 const arbol = raiz.addChildren([
@@ -87,6 +93,7 @@ const arbol = raiz.addChildren([
     rutaNiveles,
     rutaMetamodelo,
     rutaPosiciones,
+    rutaHerramientas,
     rutaPerfil,
   ]),
 ]);
