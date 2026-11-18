@@ -56,7 +56,7 @@ export function Metamodelo() {
         <p className="tenue">Escribe una frase que te hayas dicho. Mira qué palabras la vuelven rígida.</p>
       </header>
 
-      <section className="tarjeta hero formulario">
+      <section className="tarjeta hero formulario hoja">
         <label className="etiqueta" htmlFor="frase">Tu frase</label>
         <textarea
           id="frase"

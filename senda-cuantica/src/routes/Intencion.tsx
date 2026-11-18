@@ -85,7 +85,7 @@ export function Intencion() {
       {error && <p className="error" role="alert">{error}</p>}
 
       {!intencion ? (
-        <form className="tarjeta hero formulario" onSubmit={guardarManana}>
+        <form className="tarjeta hero formulario hoja" onSubmit={guardarManana}>
           <p className="eyebrow">Paso 1 · al empezar el día</p>
           <h2 className="subtitulo">Mañana</h2>
           <label className="etiqueta" htmlFor="eleccion">Hoy elijo…</label>
@@ -123,7 +123,7 @@ export function Intencion() {
       )}
 
       {intencion && !intencion.cerrada_en && (
-        <form className="tarjeta hero formulario" onSubmit={cerrarNoche}>
+        <form className="tarjeta hero formulario hoja" onSubmit={cerrarNoche}>
           <p className="eyebrow">Paso 2 · al cerrar el día</p>
           <h2 className="subtitulo">Noche</h2>
           <fieldset className="grupo">

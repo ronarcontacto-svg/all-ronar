@@ -41,7 +41,7 @@ export function Posiciones() {
         <span style={{ width: `${((paso + 1) / POSICIONES.length) * 100}%` }} />
       </div>
 
-      <section className="tarjeta hero formulario">
+      <section className="tarjeta hero formulario hoja">
         <p className="eyebrow">Posición {paso + 1} de 3</p>
         <h2 className="subtitulo">{actual.nombre}</h2>
         <p className="tenue">{actual.guia}</p>

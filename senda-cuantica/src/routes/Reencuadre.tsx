@@ -72,7 +72,7 @@ export function Reencuadre() {
       {mensaje && <p className="aviso" role="status">{mensaje}</p>}
       {error && <p className="error" role="alert">{error}</p>}
 
-      <form className="tarjeta hero formulario" onSubmit={sellar}>
+      <form className="tarjeta hero formulario hoja" onSubmit={sellar}>
         <div className="progreso" role="progressbar" aria-valuemin={1} aria-valuemax={PASOS.length} aria-valuenow={paso + 1} aria-label="Progreso del reencuadre">
           <span style={{ width: `${((paso + 1) / PASOS.length) * 100}%` }} />
         </div>
