@@ -118,6 +118,7 @@ export function Intencion() {
         </form>
       ) : (
         <section className="tarjeta">
+          <p className="eyebrow">Paso 1 · sellada</p>
           <h2 className="subtitulo">Intención sellada</h2>
           <p className="etiqueta">Hoy elijo</p>
           <p>{intencion.eleccion}</p>
