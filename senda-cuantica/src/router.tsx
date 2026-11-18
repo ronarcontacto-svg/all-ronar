@@ -15,6 +15,7 @@ import { Metamodelo } from './routes/Metamodelo';
 import { Posiciones } from './routes/Posiciones';
 import { Herramientas } from './routes/Herramientas';
 import { Guia } from './routes/Guia';
+import { Acerca } from './routes/Acerca';
 
 const raiz = createRootRoute({ component: () => <Outlet /> });
 
@@ -74,6 +75,7 @@ const rutaPosiciones = createRoute({
   component: Posiciones,
 });
 const rutaGuia = createRoute({ getParentRoute: () => zonaPrivada, path: '/guia', component: Guia });
+const rutaAcerca = createRoute({ getParentRoute: () => zonaPrivada, path: '/acerca', component: Acerca });
 const rutaHerramientas = createRoute({
   getParentRoute: () => zonaPrivada,
   path: '/herramientas',
@@ -96,6 +98,7 @@ const arbol = raiz.addChildren([
     rutaMetamodelo,
     rutaPosiciones,
     rutaGuia,
+    rutaAcerca,
     rutaHerramientas,
     rutaPerfil,
   ]),

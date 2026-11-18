@@ -53,9 +53,7 @@ export function Metamodelo() {
       <header className="cabecera">
         <p className="eyebrow">PNL · lenguaje</p>
         <h1 className="titulo">Metamodelo</h1>
-        <p className="tenue">
-          Escribe una frase que te hayas dicho sobre una situación. Mira qué palabras la vuelven rígida. Nada de lo que escribas se guarda.
-        </p>
+        <p className="tenue">Escribe una frase que te hayas dicho. Mira qué palabras la vuelven rígida.</p>
       </header>
 
       <section className="tarjeta hero formulario">

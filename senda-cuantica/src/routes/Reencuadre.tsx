@@ -51,7 +51,7 @@ export function Reencuadre() {
       setHistorial(await cargarReencuadres(uid));
       setCampos(VACIO);
       setPaso(0);
-      setMensaje('Reencuadre guardado.');
+      setMensaje('Guardado.');
     } catch {
       setError('No se pudo guardar. Tus respuestas siguen aquí; inténtalo de nuevo.');
     } finally {
@@ -66,7 +66,7 @@ export function Reencuadre() {
       <header className="cabecera">
         <p className="eyebrow">PNL · reencuadre</p>
         <h1 className="titulo">Otra lectura</h1>
-        <p className="tenue">Cuando una situación te pesa, observa qué significado le diste y busca otro igual de posible.</p>
+        <p className="tenue">Mira una situación que te pesa y busca otra lectura igual de posible.</p>
       </header>
 
       {mensaje && <p className="aviso" role="status">{mensaje}</p>}

@@ -34,7 +34,7 @@ export function Posiciones() {
       <header className="cabecera">
         <p className="eyebrow">PNL · perspectiva</p>
         <h1 className="titulo">Tres miradas</h1>
-        <p className="tenue">Mira la misma situación desde tres lugares. Nada de lo que escribas se guarda.</p>
+        <p className="tenue">La misma situación, desde tres lugares.</p>
       </header>
 
       <div className="progreso" role="progressbar" aria-valuemin={1} aria-valuemax={3} aria-valuenow={paso + 1} aria-label="Posición actual">

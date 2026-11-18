@@ -48,7 +48,7 @@ export function Herramientas() {
       <header className="cabecera">
         <p className="eyebrow">Práctica complementaria</p>
         <h1 className="titulo">Herramientas</h1>
-        <p className="tenue">Úsalas cuando una situación se repita y quieras mirarla con más detalle.</p>
+        <p className="tenue">Úsalas cuando una situación se repita.</p>
       </header>
 
       <div className="herramientas">

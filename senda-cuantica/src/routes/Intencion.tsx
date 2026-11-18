@@ -10,10 +10,6 @@ import {
 import { hoy } from '../lib/fechas';
 import { useTitulo } from '../lib/titulo';
 
-// Concepto del método, no hecho sobre la realidad: la intención es una forma de practicar.
-const MARCO =
-  'Según el marco que sigue esta práctica, hay dos modos de actuar. En el interno, se fuerza el resultado con esfuerzo. En el externo, se elige la variante y se actúa desde una certeza tranquila. Esto es una manera de practicar y observar, no una afirmación sobre cómo funciona la realidad.';
-
 export function Intencion() {
   const { sesion } = useSesion();
   useTitulo('Intención');
@@ -83,13 +79,8 @@ export function Intencion() {
       <header className="cabecera">
         <p className="eyebrow">Campo de práctica · {fecha}</p>
         <h1 className="titulo">Intención</h1>
-        <p className="tenue">Elige cómo actuar hoy y, por la noche, observa desde dónde lo hiciste.</p>
+        <p className="tenue">Elige cómo actuar hoy y, por la noche, mira desde dónde lo hiciste.</p>
       </header>
-
-      <details className="tarjeta marco">
-        <summary>Marco del método</summary>
-        <p>{MARCO}</p>
-      </details>
 
       {error && <p className="error" role="alert">{error}</p>}
 

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Navigate } from '@tanstack/react-router';
+import { Link, Navigate } from '@tanstack/react-router';
 import { useSesion } from '../lib/sesion';
 import { supabase } from '../lib/supabase';
 import { borrarMisRegistros, exportarDatos } from '../lib/datos';
@@ -29,7 +29,6 @@ export function Perfil() {
       enlace.download = `senda-cuantica-${new Date().toISOString().slice(0, 10)}.json`;
       enlace.click();
       URL.revokeObjectURL(url);
-      setMensaje('Exportación descargada.');
     } catch {
       setError('No se pudo exportar. Inténtalo de nuevo.');
     } finally {
@@ -44,9 +43,7 @@ export function Perfil() {
     try {
       await borrarMisRegistros();
       setConfirmacion('');
-      setMensaje(
-        'Tus intenciones, observaciones y sintonías se han borrado. Los consentimientos se conservan como prueba de aceptación.',
-      );
+      setMensaje('Listo. Tus registros se han borrado.');
     } catch {
       setError('No se pudieron borrar los registros. Inténtalo de nuevo.');
     } finally {
@@ -72,7 +69,7 @@ export function Perfil() {
       <section className="tarjeta hero">
         <p className="eyebrow">Tu archivo</p>
         <h2 className="subtitulo">Mis datos</h2>
-        <p className="tenue">Descarga todo lo que has registrado en un archivo JSON.</p>
+        <p className="tenue">Descarga una copia de todo lo que has registrado.</p>
         <button type="button" className="btn btn-primario" onClick={exportar} disabled={ocupado}>
           Exportar mis datos
         </button>
@@ -99,6 +96,10 @@ export function Perfil() {
         >
           Borrar registros
         </button>
+      </section>
+
+      <section className="tarjeta">
+        <Link to="/acerca" className="enlace">Acerca de la práctica</Link>
       </section>
 
       <section className="tarjeta">

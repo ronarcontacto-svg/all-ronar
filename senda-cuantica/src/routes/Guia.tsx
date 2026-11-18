@@ -91,7 +91,7 @@ export function Guia() {
       setMensajes((m) => [...m, { rol: 'guia', texto: datos.texto as string }]);
       leer(datos.texto);
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'No se pudo consultar a la guía.');
+      setError('La guía no está disponible en este momento. Inténtalo más tarde.');
     } finally {
       setEnviando(false);
     }
@@ -102,10 +102,7 @@ export function Guia() {
       <header className="cabecera">
         <p className="eyebrow">Acompañamiento</p>
         <h1 className="titulo">Guía</h1>
-        <p className="tenue">
-          Una guía de práctica que lee tus registros recientes y te devuelve preguntas y una práctica pequeña. No es
-          terapia ni sustituye a un profesional.
-        </p>
+        <p className="tenue">Una compañera para mirar tus días con preguntas y una práctica pequeña.</p>
       </header>
 
       {!consentido ? (

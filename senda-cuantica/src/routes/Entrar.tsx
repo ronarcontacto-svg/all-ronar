@@ -27,7 +27,7 @@ export function Entrar() {
     });
     setEnviando(false);
     if (err) {
-      setError('No se pudo enviar el enlace. Revisa el correo e inténtalo de nuevo.');
+      setError('No pudimos enviarte el enlace. Revisa la dirección e inténtalo de nuevo.');
       return;
     }
     setEnviado(true);
@@ -53,7 +53,7 @@ export function Entrar() {
         ) : (
           <form onSubmit={enviar} className="formulario">
             <h2 className="subtitulo">Entrar</h2>
-            <p className="tenue">Te enviaremos un enlace de acceso. No hace falta contraseña.</p>
+            <p className="tenue">Te enviamos un enlace al correo. Sin contraseñas.</p>
             <label className="etiqueta" htmlFor="email">Correo electrónico</label>
             <input
               id="email"

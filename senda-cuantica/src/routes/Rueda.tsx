@@ -72,7 +72,7 @@ export function RuedaVida() {
     try {
       await guardarRueda(uid, valores);
       setHistorial(await cargarRuedas(uid));
-      setMensaje('Rueda guardada. Compárala con la anterior cuando quieras.');
+      setMensaje('Guardado.');
     } catch {
       setError('No se pudo guardar la rueda. Inténtalo de nuevo.');
     } finally {
@@ -87,7 +87,7 @@ export function RuedaVida() {
       <header className="cabecera">
         <p className="eyebrow">Mirada de conjunto</p>
         <h1 className="titulo">Rueda de la vida</h1>
-        <p className="tenue">Puntúa cada área de 1 a 10 según cómo la vives hoy. No hay respuestas correctas.</p>
+        <p className="tenue">Puntúa cada área de 1 a 10, según cómo la vives hoy.</p>
       </header>
 
       {mensaje && <p className="aviso" role="status">{mensaje}</p>}
@@ -95,7 +95,7 @@ export function RuedaVida() {
 
       <section className="tarjeta hero rueda-bloque">
         <Rueda valores={valores} />
-        <p className="tenue">Área más baja hoy: <strong>{masBaja}</strong>. Elige una acción concreta para ella.</p>
+        <p className="tenue">El área que más pide atención hoy: <strong>{masBaja}</strong>.</p>
       </section>
 
       <section className="tarjeta formulario">
