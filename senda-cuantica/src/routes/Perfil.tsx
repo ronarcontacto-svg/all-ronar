@@ -69,7 +69,8 @@ export function Perfil() {
       {mensaje && <p className="aviso" role="status">{mensaje}</p>}
       {error && <p className="error" role="alert">{error}</p>}
 
-      <section className="tarjeta">
+      <section className="tarjeta hero">
+        <p className="eyebrow">Tu archivo</p>
         <h2 className="subtitulo">Mis datos</h2>
         <p className="tenue">Descarga todo lo que has registrado en un archivo JSON.</p>
         <button type="button" className="btn btn-primario" onClick={exportar} disabled={ocupado}>

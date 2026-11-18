@@ -10,7 +10,8 @@ const LECTURA = [1, 2, 3, 4, 5];
 
 function Lectura({ titulo, onElegir }: { titulo: string; onElegir: (n: number) => void }) {
   return (
-    <section className="tarjeta">
+    <section className="tarjeta hero">
+      <p className="eyebrow">Antes de sintonizar</p>
       <h2 className="subtitulo">{titulo}</h2>
       <p className="tenue">1 = disperso · 5 = centrado</p>
       <div className="escala">
@@ -128,7 +129,8 @@ export function Sintonia() {
       )}
 
       {fase === 'elegir' && (
-        <section className="tarjeta formulario">
+        <section className="tarjeta hero formulario">
+          <p className="eyebrow">Paso 2 · elige el tiempo</p>
           <h2 className="subtitulo">Duración</h2>
           <div className="escala">
             {([1, 3, 5] as const).map((m) => (
@@ -150,7 +152,8 @@ export function Sintonia() {
       )}
 
       {fase === 'salida' && (
-        <section className="tarjeta">
+        <section className="tarjeta hero">
+          <p className="eyebrow">Cierre</p>
           <h2 className="subtitulo">{completada ? 'Sesión completada' : 'Sesión interrumpida'}</h2>
           <p className="tenue">Ahora, tu lectura de salida (puedes saltarla).</p>
           <div className="escala">

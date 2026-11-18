@@ -84,7 +84,7 @@ export function Condiciones() {
         </p>
       </article>
 
-      <form onSubmit={aceptar} className="tarjeta formulario">
+      <form onSubmit={aceptar} className="tarjeta hero formulario">
         <label className="casilla">
           <input
             type="checkbox"
