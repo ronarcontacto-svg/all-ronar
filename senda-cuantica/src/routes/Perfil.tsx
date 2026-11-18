@@ -78,7 +78,8 @@ export function Perfil() {
         </button>
       </section>
 
-      <section className="tarjeta formulario">
+      <section className="tarjeta formulario zona-peligro">
+        <p className="eyebrow">Zona de cuidado</p>
         <h2 className="subtitulo">Borrar mis registros</h2>
         <p className="tenue">
           Se borran intenciones, observaciones y sintonías. Esta acción no se puede deshacer. Para
