@@ -114,8 +114,8 @@ export function Guia() {
           <h2 className="subtitulo">Tus registros viajan a Google</h2>
           <p className="tenue">
             Para responder, la guía envía a Google (modelo Gemini) tus registros de los últimos días y el mensaje que
-            escribas. No se usan para entrenar modelos según la configuración de tu cuenta de Google Cloud, y puedes
-            dejar de usar la guía cuando quieras.
+            escribas. Antes de aceptar, revisa la política de datos de Google para ese servicio. Puedes dejar de usar
+            la guía cuando quieras.
           </p>
           <label className="casilla">
             <input type="checkbox" onChange={(e) => setConsentido(e.target.checked)} />
