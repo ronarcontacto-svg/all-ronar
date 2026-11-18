@@ -10,6 +10,7 @@ import { Sintonia } from './routes/Sintonia';
 import { Perfil } from './routes/Perfil';
 import { RuedaVida } from './routes/Rueda';
 import { Reencuadre } from './routes/Reencuadre';
+import { Niveles } from './routes/Niveles';
 
 const raiz = createRootRoute({ component: () => <Outlet /> });
 
@@ -57,6 +58,7 @@ const rutaReencuadre = createRoute({
   path: '/reencuadre',
   component: Reencuadre,
 });
+const rutaNiveles = createRoute({ getParentRoute: () => zonaPrivada, path: '/niveles', component: Niveles });
 const rutaPerfil = createRoute({ getParentRoute: () => zonaPrivada, path: '/perfil', component: Perfil });
 
 const arbol = raiz.addChildren([
@@ -70,6 +72,7 @@ const arbol = raiz.addChildren([
     rutaSintonia,
     rutaRueda,
     rutaReencuadre,
+    rutaNiveles,
     rutaPerfil,
   ]),
 ]);

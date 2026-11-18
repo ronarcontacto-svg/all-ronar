@@ -1,4 +1,5 @@
 import { useEffect, useState, type FormEvent } from 'react';
+import { Link } from '@tanstack/react-router';
 import { useSesion } from '../lib/sesion';
 import { useTitulo } from '../lib/titulo';
 import { cargarReencuadres, guardarReencuadre, type Reencuadre as ReencuadreTipo } from '../lib/datos';
@@ -106,6 +107,10 @@ export function Reencuadre() {
           )}
         </div>
       </form>
+
+      <p>
+        <Link to="/niveles" className="enlace">Ver el mapa de niveles neurológicos</Link>
+      </p>
 
       {historial.length > 0 && (
         <section className="tarjeta">

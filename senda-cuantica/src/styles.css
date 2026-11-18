@@ -258,6 +258,14 @@ p { margin: 0 0 12px; }
 .estado { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-alchemy); white-space: nowrap; }
 .estado.hecho { color: var(--cyan-quantum); }
 
+/* Niveles neurológicos */
+.niveles-bloque { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.niveles-mapa { width: min(86vw, 320px); height: auto; }
+.nivel-capa { fill: rgba(139, 92, 246, 0.06); stroke: rgba(56, 189, 248, 0.35); stroke-width: 1; transition: fill 0.3s ease, stroke 0.3s ease; }
+.nivel-capa.activa { fill: rgba(56, 189, 248, 0.22); stroke: var(--cyan-quantum); stroke-width: 1.6; }
+.niveles-botones { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.enlace { color: var(--cyan-quantum); }
+
 .cifra-paso { margin: 4px 0 10px; }
 .cifra-paso .cifra { font-size: 2.4rem; }
 
