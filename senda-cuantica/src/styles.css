@@ -32,9 +32,12 @@ body {
   min-height: 100dvh;
   background-color: var(--bg-void);
   background-image:
+    linear-gradient(rgba(139, 92, 246, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(139, 92, 246, 0.045) 1px, transparent 1px),
     radial-gradient(ellipse 80% 50% at 50% -20%, rgba(139, 92, 246, 0.16), transparent),
     radial-gradient(circle at 85% 75%, rgba(56, 189, 248, 0.08), transparent 45%),
     radial-gradient(circle at 15% 85%, rgba(245, 158, 11, 0.06), transparent 45%);
+  background-size: 48px 48px, 48px 48px, auto, auto, auto;
   overflow-x: hidden;
 }
 
@@ -253,6 +256,10 @@ p { margin: 0 0 12px; }
 .metricas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
 .metrica { padding: 16px; border-radius: 18px; }
 .metrica .eyebrow { font-size: 0.6rem; }
+.metrica .cifra { margin: 10px 0 8px; }
+.metrica .tenue { font-size: 0.85rem; margin: 0; }
+.cifra-de { font-size: 1rem; color: var(--tenue); }
+.cifra-texto { font-size: 1.5rem; line-height: 1.2; }
 .patron { margin-bottom: 14px; }
 .lista-simple { margin: 0; padding-left: 18px; }
 

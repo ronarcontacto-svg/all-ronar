@@ -85,9 +85,7 @@ export function Hoy() {
         <h1 className="titulo-grande">
           Interrumpe, <span className="text-gradient-quantum">sintoniza</span>, sella.
         </h1>
-        <p className="tenue">
-          Una práctica diaria de observación: elegir, observar y registrar lo que ocurre. Sin promesas; solo lo que registras.
-        </p>
+        <p className="tenue">Observa, registra, vuelve a sintonizar.</p>
       </section>
 
       {error && <p className="error" role="alert">{error}</p>}
@@ -116,17 +114,23 @@ export function Hoy() {
         </ol>
       </section>
 
-      <section className="tarjeta">
-        <h2 className="subtitulo">Constancia</h2>
-        <p className="cifra">{ultimos7} de los últimos 7 días</p>
-        <p className="tenue">Días con algún registro. Un día sin práctica no borra lo anterior.</p>
-      </section>
-
-      <section className="tarjeta">
-        <h2 className="subtitulo">Estadio</h2>
-        <p className="cifra">{estadioDe(diasPracticados.size)}</p>
-        <p className="tenue">{diasPracticados.size} día{diasPracticados.size === 1 ? '' : 's'} de práctica en total.</p>
-      </section>
+      <div className="metricas">
+        <article className="tarjeta metrica">
+          <p className="eyebrow">Constancia</p>
+          <p className="cifra">{ultimos7}<span className="cifra-de"> / 7</span></p>
+          <p className="tenue">Días con registro en la última semana.</p>
+        </article>
+        <article className="tarjeta metrica">
+          <p className="eyebrow">Estadio</p>
+          <p className="cifra cifra-texto">{estadioDe(diasPracticados.size)}</p>
+          <p className="tenue">Según tus días de práctica.</p>
+        </article>
+        <article className="tarjeta metrica">
+          <p className="eyebrow">Días en total</p>
+          <p className="cifra">{diasPracticados.size}</p>
+          <p className="tenue">Días con algún registro.</p>
+        </article>
+      </div>
 
       <section className="tarjeta">
         <h2 className="subtitulo">Lectura de patrones</h2>
