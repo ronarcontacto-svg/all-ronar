@@ -264,6 +264,17 @@ p { margin: 0 0 12px; }
 .metrica .eyebrow { font-size: 0.6rem; }
 .metrica .cifra { margin: 10px 0 8px; }
 .metrica .tenue { font-size: 0.85rem; margin: 0; }
+.semana { display: flex; gap: 6px; margin: 0 0 10px; }
+.dia {
+  flex: 1; max-width: 26px; aspect-ratio: 1; border-radius: 50%;
+  display: grid; place-items: center; font-size: 0.65rem; color: var(--tenue);
+  border: 1px solid var(--border-subtle);
+}
+.dia.on {
+  color: #fff; border-color: transparent;
+  background: linear-gradient(135deg, #7C3AED 0%, #2563EB 50%, #0284C7 100%);
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.35);
+}
 .cifra-de { font-size: 1rem; color: var(--tenue); }
 .cifra-texto { font-size: 1.5rem; line-height: 1.2; }
 .patron { margin-bottom: 14px; }

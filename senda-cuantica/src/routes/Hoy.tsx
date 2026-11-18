@@ -118,6 +118,17 @@ export function Hoy() {
         <article className="tarjeta metrica">
           <p className="eyebrow">Constancia</p>
           <p className="cifra">{ultimos7}<span className="cifra-de"> / 7</span></p>
+          <div className="semana" role="img" aria-label={`${ultimos7} de los últimos 7 días con registro`}>
+            {Array.from({ length: 7 }, (_, k) => 6 - k).map((i) => {
+              const f = desplazar(fechaHoy, -i);
+              const on = diasPracticados.has(f);
+              return (
+                <span key={f} className={`dia ${on ? 'on' : ''}`} title={f} aria-hidden="true">
+                  {new Date(`${f}T12:00:00`).toLocaleDateString('es-ES', { weekday: 'narrow' })}
+                </span>
+              );
+            })}
+          </div>
           <p className="tenue">Días con registro en la última semana.</p>
         </article>
         <article className="tarjeta metrica">
