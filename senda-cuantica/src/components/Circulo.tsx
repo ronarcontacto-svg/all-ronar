@@ -18,7 +18,8 @@ export function Circulo({ activo }: { activo: boolean }) {
   return (
     <div className="circulo-zona">
       <div className={`circulo ${activo ? fase : 'reposo'}`} aria-hidden="true" />
-      <p className="fase" aria-live="polite">
+      {/* Sin aria-live: el ritmo de 5 s no se anuncia. La sesión se anuncia al iniciar y al terminar. */}
+      <p className="fase" aria-hidden="true">
         {activo ? (fase === 'inhala' ? 'Inhala' : 'Exhala') : 'Pausa'}
       </p>
     </div>

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useSesion } from '../lib/sesion';
 import { guardarObservacion } from '../lib/datos';
+import { useTitulo } from '../lib/titulo';
 
 type Campo =
   | 'disparador'
@@ -42,6 +43,7 @@ const PASOS: { titulo: string; pregunta: string; campo: Campo; intensidad?: bool
 
 export function Cuaderno() {
   const { sesion } = useSesion();
+  useTitulo('Cuaderno');
   const uid = sesion?.user.id;
   const [paso, setPaso] = useState(0);
   const [textos, setTextos] = useState<Textos>(VACIO);
@@ -107,7 +109,14 @@ export function Cuaderno() {
         <p className="tenue">Paso {Number.parseInt(actual.titulo, 10)} de 8</p>
       </header>
 
-      <div className="progreso" aria-hidden="true">
+      <div
+        className="progreso"
+        role="progressbar"
+        aria-label="Progreso del cuaderno"
+        aria-valuemin={1}
+        aria-valuemax={8}
+        aria-valuenow={Number.parseInt(actual.titulo, 10)}
+      >
         <span style={{ width: `${((paso + 1) / PASOS.length) * 100}%` }} />
       </div>
 
@@ -125,6 +134,7 @@ export function Cuaderno() {
                   type="button"
                   className={`opcion ${intensidad === n ? 'activa' : ''}`}
                   aria-pressed={intensidad === n}
+                  aria-label={`Intensidad ${n} de 5`}
                   onClick={() => setIntensidad(n)}
                 >
                   {n}

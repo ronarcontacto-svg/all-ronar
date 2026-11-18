@@ -3,9 +3,11 @@ import { Navigate } from '@tanstack/react-router';
 import { useSesion } from '../lib/sesion';
 import { supabase } from '../lib/supabase';
 import { borrarMisRegistros, exportarDatos } from '../lib/datos';
+import { useTitulo } from '../lib/titulo';
 
 export function Perfil() {
   const { sesion } = useSesion();
+  useTitulo('Perfil');
   const uid = sesion?.user.id;
   const [mensaje, setMensaje] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);

@@ -2,6 +2,7 @@ import { useState, type FormEvent } from 'react';
 import { Navigate } from '@tanstack/react-router';
 import { supabase } from '../lib/supabase';
 import { useSesion } from '../lib/sesion';
+import { useTitulo } from '../lib/titulo';
 
 export function Entrar() {
   const { cargando, sesion } = useSesion();
@@ -9,6 +10,7 @@ export function Entrar() {
   const [enviando, setEnviando] = useState(false);
   const [enviado, setEnviado] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  useTitulo('Entrar');
 
   if (!cargando && sesion) return <Navigate to="/hoy" />;
 
@@ -60,8 +62,9 @@ export function Entrar() {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              aria-describedby={error ? 'error-email' : undefined}
             />
-            {error && <p className="error" role="alert">{error}</p>}
+            {error && <p id="error-email" className="error" role="alert">{error}</p>}
             <button className="btn btn-primario" type="submit" disabled={enviando}>
               {enviando ? 'Enviando…' : 'Enviar enlace'}
             </button>

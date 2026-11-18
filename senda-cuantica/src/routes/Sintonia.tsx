@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { useSesion } from '../lib/sesion';
 import { guardarSintonia } from '../lib/datos';
 import { Circulo } from '../components/Circulo';
+import { useTitulo } from '../lib/titulo';
 
 type Fase = 'entrada' | 'elegir' | 'sesion' | 'salida' | 'hecho';
 
@@ -14,7 +15,7 @@ function Lectura({ titulo, onElegir }: { titulo: string; onElegir: (n: number) =
       <p className="tenue">1 = disperso · 5 = centrado</p>
       <div className="escala">
         {LECTURA.map((n) => (
-          <button key={n} type="button" className="opcion" onClick={() => onElegir(n)}>
+          <button key={n} type="button" className="opcion" aria-label={`Nivel ${n} de 5`} onClick={() => onElegir(n)}>
             {n}
           </button>
         ))}
@@ -25,6 +26,7 @@ function Lectura({ titulo, onElegir }: { titulo: string; onElegir: (n: number) =
 
 export function Sintonia() {
   const { sesion } = useSesion();
+  useTitulo('Sintonía');
   const uid = sesion?.user.id;
   const [fase, setFase] = useState<Fase>('entrada');
   const [lecturaEntrada, setLecturaEntrada] = useState<number | null>(null);
@@ -82,6 +84,7 @@ export function Sintonia() {
   if (fase === 'sesion') {
     return (
       <div className="pantalla pantalla-sesion">
+        <h1 className="sr-only">Sintonía en curso</h1>
         {/* Salir siempre visible durante la sesión */}
         <button type="button" className="btn btn-salir" onClick={salir}>
           Salir
@@ -139,7 +142,7 @@ export function Sintonia() {
           <p className="tenue">Ahora, tu lectura de salida (puedes saltarla).</p>
           <div className="escala">
             {LECTURA.map((n) => (
-              <button key={n} type="button" className="opcion" onClick={() => registrarSalida(n)}>
+              <button key={n} type="button" className="opcion" aria-label={`Nivel de salida ${n} de 5`} onClick={() => registrarSalida(n)}>
                 {n}
               </button>
             ))}

@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Link } from '@tanstack/react-router';
 import { useSesion } from '../lib/sesion';
+import { useTitulo } from '../lib/titulo';
 import { cargarHistorial, type Intencion, type Observacion, type Sintonia } from '../lib/datos';
 import { calcularPatrones } from '../lib/patrones';
 import { desplazar, fechaDe, hoy } from '../lib/fechas';
@@ -17,6 +18,7 @@ const ETIQUETA_VARIANTE = { si: 'Sí', parcial: 'Parcial', no: 'No' } as const;
 
 export function Hoy() {
   const { sesion } = useSesion();
+  useTitulo('Hoy');
   const uid = sesion?.user.id;
   const [cargando, setCargando] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -63,7 +65,7 @@ export function Hoy() {
 
   const patrones = useMemo(() => calcularPatrones(observaciones, intenciones), [observaciones, intenciones]);
 
-  if (cargando) return <p className="tenue">Cargando…</p>;
+  if (cargando) return <p className="tenue" role="status">Cargando…</p>;
 
   const manana = intencionHoy ? 'Sellada' : 'Pendiente';
   const momento =

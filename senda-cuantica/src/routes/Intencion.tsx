@@ -8,6 +8,7 @@ import {
   type Variante,
 } from '../lib/datos';
 import { hoy } from '../lib/fechas';
+import { useTitulo } from '../lib/titulo';
 
 // Concepto del método, no hecho sobre la realidad: la intención es una forma de practicar.
 const MARCO =
@@ -15,6 +16,7 @@ const MARCO =
 
 export function Intencion() {
   const { sesion } = useSesion();
+  useTitulo('Intención');
   const uid = sesion?.user.id;
   const fecha = hoy();
   const [cargando, setCargando] = useState(true);
@@ -139,6 +141,7 @@ export function Intencion() {
                   type="button"
                   className={`opcion ${modo === n ? 'activa' : ''}`}
                   aria-pressed={modo === n}
+                  aria-label={`Nivel ${n} de 5`}
                   onClick={() => setModo(n)}
                 >
                   {n}

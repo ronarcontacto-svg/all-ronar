@@ -2,6 +2,7 @@ import { useState, type FormEvent } from 'react';
 import { Navigate, useNavigate } from '@tanstack/react-router';
 import { supabase } from '../lib/supabase';
 import { useSesion } from '../lib/sesion';
+import { useTitulo } from '../lib/titulo';
 import { VERSION_CONSENTIMIENTO } from '../lib/consentimiento';
 
 // Texto en tono legal formal, español de España.
@@ -9,6 +10,7 @@ import { VERSION_CONSENTIMIENTO } from '../lib/consentimiento';
 export function Condiciones() {
   const { cargando, sesion, consentido, recargarConsentimiento } = useSesion();
   const navegar = useNavigate();
+  useTitulo('Condiciones');
   const [acepto, setAcepto] = useState(false);
   const [guardando, setGuardando] = useState(false);
   const [error, setError] = useState<string | null>(null);
