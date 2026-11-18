@@ -81,8 +81,8 @@ export function Intencion() {
   return (
     <div className="pantalla">
       <header className="cabecera">
+        <p className="eyebrow">Campo de práctica · {fecha}</p>
         <h1 className="titulo">Intención</h1>
-        <p className="tenue">{fecha}</p>
       </header>
 
       <details className="tarjeta marco">

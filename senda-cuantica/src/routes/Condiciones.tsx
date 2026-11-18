@@ -44,6 +44,7 @@ export function Condiciones() {
   return (
     <div className="pantalla-texto">
       <header className="cabecera">
+        <p className="eyebrow">Antes de empezar</p>
         <h1 className="titulo">Condiciones de uso y consentimiento</h1>
         <p className="tenue">Versión {VERSION_CONSENTIMIENTO}</p>
       </header>

@@ -105,8 +105,8 @@ export function Cuaderno() {
   return (
     <div className="pantalla">
       <header className="cabecera">
+        <p className="eyebrow">Paso {Number.parseInt(actual.titulo, 10)} de 8</p>
         <h1 className="titulo">Cuaderno Dual</h1>
-        <p className="tenue">Paso {Number.parseInt(actual.titulo, 10)} de 8</p>
       </header>
 
       <div

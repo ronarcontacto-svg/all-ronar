@@ -61,6 +61,7 @@ export function Perfil() {
   return (
     <div className="pantalla">
       <header className="cabecera">
+        <p className="eyebrow">Tu cuenta</p>
         <h1 className="titulo">Perfil</h1>
         <p className="tenue">{sesion.user.email}</p>
       </header>

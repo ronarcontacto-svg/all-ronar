@@ -36,7 +36,8 @@ export function Entrar() {
   return (
     <div className="pantalla-entrada">
       <header className="cabecera">
-        <h1 className="titulo-grande">Senda Cuántica</h1>
+        <p className="eyebrow">Arquitectura de coherencia</p>
+        <h1 className="titulo-grande">Senda <span className="text-gradient-quantum">Cuántica</span></h1>
         <p className="tenue">Práctica diaria de autoobservación</p>
       </header>
 

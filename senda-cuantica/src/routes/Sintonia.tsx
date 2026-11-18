@@ -110,7 +110,8 @@ export function Sintonia() {
   return (
     <div className="pantalla">
       <header className="cabecera">
-        <h1 className="titulo">Sintonía 0,1 Hz</h1>
+        <p className="eyebrow">Respiración · 0,1 Hz</p>
+        <h1 className="titulo">Sintonía</h1>
         <p className="tenue">Respiración de 5 segundos entre inhalación y exhalación.</p>
       </header>
 
