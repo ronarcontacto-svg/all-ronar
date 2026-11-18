@@ -239,7 +239,13 @@ p { margin: 0 0 12px; }
 .app { min-height: 100dvh; }
 
 /* Hilo del día */
-.hilo { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.hilo { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; counter-reset: paso; }
+.hilo li { position: relative; counter-increment: paso; }
+.hilo li::before {
+  content: '0' counter(paso); position: absolute; left: 16px; top: 50%; transform: translateY(-50%);
+  font-size: 0.7rem; letter-spacing: 0.14em; color: var(--cyan-quantum); pointer-events: none;
+}
+.hilo .hilo-fila { padding-left: 52px; }
 .hilo-fila {
   display: flex; justify-content: space-between; gap: 12px; align-items: center;
   min-height: 52px; padding: 12px 16px; border-radius: 14px;
@@ -280,6 +286,13 @@ p { margin: 0 0 12px; }
 }
 .circulo.inhala { transform: scale(1); }
 .circulo.exhala, .circulo.reposo { transform: scale(0.6); }
+/* Anillos de resonancia alrededor del círculo, como el prototipo */
+.circulo { position: relative; }
+.circulo::before, .circulo::after {
+  content: ''; position: absolute; inset: -14%; border-radius: 50%;
+  border: 1px solid rgba(56, 189, 248, 0.14); pointer-events: none;
+}
+.circulo::after { inset: -28%; border-color: rgba(139, 92, 246, 0.10); }
 .fase { font-family: var(--fuente-titulo); font-size: 1.6rem; margin: 0; }
 
 /* Navegación inferior fuera; la superior reemplaza. */
