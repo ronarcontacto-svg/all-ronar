@@ -328,6 +328,30 @@ a.marca-icono { text-decoration: none; color: inherit; display: grid; place-item
 .hoja .progreso { background: #e5dbc2; }
 .hoja .cifra { color: #2b2620; }
 .hoja .cifra-de { color: #6b5f4b; }
+
+/* Hoja cuántica: el papel está en superposición (ondas de probabilidad suaves).
+   Al escribir, la superposición colapsa y el papel se asienta. Sin movimiento si se reduce. */
+.hoja > * { position: relative; z-index: 1; }
+.hoja::after {
+  content: '';
+  position: absolute; inset: 0; border-radius: inherit; pointer-events: none; z-index: 0;
+  background:
+    radial-gradient(ellipse 60% 45% at 25% 30%, rgba(124, 58, 237, 0.16), transparent 70%),
+    radial-gradient(ellipse 55% 40% at 78% 62%, rgba(2, 132, 199, 0.14), transparent 70%),
+    radial-gradient(ellipse 50% 35% at 50% 92%, rgba(245, 158, 11, 0.12), transparent 70%);
+  background-size: 180% 180%;
+  mix-blend-mode: multiply;
+  animation: hoja-onda 18s ease-in-out infinite alternate;
+  transition: opacity 1.4s ease;
+}
+.hoja:focus-within::after { opacity: 0.25; }
+@keyframes hoja-onda {
+  from { background-position: 0% 0%; }
+  to { background-position: 100% 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hoja::after { animation: none; }
+}
 /* Más específico que .tarjeta.hero para que el margen de la espiral se respete */
 .tarjeta.hoja, .tarjeta.hero.hoja { padding: 30px 24px 28px 74px; }
 @media (max-width: 480px) {
