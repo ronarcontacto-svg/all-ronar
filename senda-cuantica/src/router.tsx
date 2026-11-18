@@ -14,6 +14,7 @@ import { Niveles } from './routes/Niveles';
 import { Metamodelo } from './routes/Metamodelo';
 import { Posiciones } from './routes/Posiciones';
 import { Herramientas } from './routes/Herramientas';
+import { Guia } from './routes/Guia';
 
 const raiz = createRootRoute({ component: () => <Outlet /> });
 
@@ -72,6 +73,7 @@ const rutaPosiciones = createRoute({
   path: '/posiciones',
   component: Posiciones,
 });
+const rutaGuia = createRoute({ getParentRoute: () => zonaPrivada, path: '/guia', component: Guia });
 const rutaHerramientas = createRoute({
   getParentRoute: () => zonaPrivada,
   path: '/herramientas',
@@ -93,6 +95,7 @@ const arbol = raiz.addChildren([
     rutaNiveles,
     rutaMetamodelo,
     rutaPosiciones,
+    rutaGuia,
     rutaHerramientas,
     rutaPerfil,
   ]),

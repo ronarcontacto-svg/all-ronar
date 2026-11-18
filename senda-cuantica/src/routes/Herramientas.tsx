@@ -4,6 +4,12 @@ import { useTitulo } from '../lib/titulo';
 // Todas las herramientas en un solo sitio, para que la navegación móvil tenga cinco pestañas.
 const HERRAMIENTAS = [
   {
+    to: '/guia',
+    etiqueta: 'Acompañamiento · IA',
+    nombre: 'Guía',
+    descripcion: 'Conversa con una guía que lee tus registros recientes y te propone preguntas y una práctica pequeña.',
+  },
+  {
     to: '/rueda',
     etiqueta: 'Mirada de conjunto',
     nombre: 'Rueda de la vida',
