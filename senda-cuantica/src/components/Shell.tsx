@@ -31,7 +31,7 @@ export function LayoutProtegido() {
           <Link to="/intencion" className="tab">Intención</Link>
           <Link to="/cuaderno" className="tab">Cuaderno</Link>
           <Link to="/sintonia" className="tab">Sintonía</Link>
-          <Link to="/herramientas" className="tab">Herramientas</Link>
+          <Link to="/herramientas" className="tab">Más</Link>
         </nav>
       </header>
       <main className="contenido">
