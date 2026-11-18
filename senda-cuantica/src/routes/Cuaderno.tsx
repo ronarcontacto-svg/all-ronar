@@ -120,7 +120,8 @@ export function Cuaderno() {
         <span style={{ width: `${((paso + 1) / PASOS.length) * 100}%` }} />
       </div>
 
-      <section className="tarjeta formulario">
+      <section className="tarjeta hero formulario">
+        <p className="eyebrow">Registro en curso</p>
         <h2 className="subtitulo">{actual.titulo}</h2>
         <p>{actual.pregunta}</p>
 
