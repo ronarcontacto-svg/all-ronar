@@ -109,7 +109,11 @@ export function Reencuadre() {
       </form>
 
       <p>
-        <Link to="/niveles" className="enlace">Ver el mapa de niveles neurológicos</Link>
+        <Link to="/niveles" className="enlace">Mapa de niveles neurológicos</Link>
+        {' · '}
+        <Link to="/metamodelo" className="enlace">Metamodelo</Link>
+        {' · '}
+        <Link to="/posiciones" className="enlace">Tres miradas</Link>
       </p>
 
       {historial.length > 0 && (
