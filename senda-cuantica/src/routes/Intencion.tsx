@@ -83,6 +83,7 @@ export function Intencion() {
       <header className="cabecera">
         <p className="eyebrow">Campo de práctica · {fecha}</p>
         <h1 className="titulo">Intención</h1>
+        <p className="tenue">Elige cómo actuar hoy y, por la noche, observa desde dónde lo hiciste.</p>
       </header>
 
       <details className="tarjeta marco">

@@ -258,6 +258,9 @@ p { margin: 0 0 12px; }
 .estado { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-alchemy); white-space: nowrap; }
 .estado.hecho { color: var(--cyan-quantum); }
 
+.cifra-paso { margin: 4px 0 10px; }
+.cifra-paso .cifra { font-size: 2.4rem; }
+
 /* Rueda de la vida y reencuadre */
 .rueda-bloque { display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; }
 .rueda { width: min(86vw, 340px); height: auto; overflow: visible; }
